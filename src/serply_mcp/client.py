@@ -105,7 +105,7 @@ class SerplyClient:
                 },
             )
 
-            if resp.status_code == 200:
+            if resp.status_code in (200, 202):
                 # /v1/request answers with the scraped page as a raw body under
                 # content-type: text/html, not the JSON envelope every other
                 # endpoint uses. Without this branch resp.json() raises
